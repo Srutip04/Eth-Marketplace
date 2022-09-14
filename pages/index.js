@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { Navbar, Footer } from "@components/common";
+import { Navbar, Footer, Hero, Breadcrumbs } from "@components/common";
 
 
 export default function Home() {
@@ -12,41 +12,11 @@ export default function Home() {
           <Navbar />
           <div className="fit">
             {/*------ HERO STARTS ------*/}
-            <section className="lg:2/6 text-left my-28">
-              <div className="text-6xl font-semibold text-gray-900 leading-none">
-                Grow your career as a developer
-              </div>
-              <div className="mt-6 text-xl font-light text-true-gray-500 antialiased">
-                Learn programming and web development the easy way! Get
-                unlimited access to all of our courses.
-              </div>
-              <div className="mt-5 sm:mt-8 flex lg:justify-start">
-                <div className="rounded-md shadow">
-                  <a
-                    href="#"
-                    className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10"
-                  >
-                    Get started
-                  </a>
-                </div>
-              </div>
-            </section>
+            <Hero />
             {/*------ HERO ENDS ------*/}
 
             {/*------ BREADCRUMBS STARTS ------*/}
-            <nav aria-label="breadcrumb" className="mb-4">
-              <ol className="flex leading-none text-indigo-600 divide-x divide-indigo-400">
-                <li className="pr-4">
-                  <a href="#">Buy</a>
-                </li>
-                <li className="px-4">
-                  <a href="#">My Orders</a>
-                </li>
-                <li className="px-4">
-                  <a href="#">All Orders</a>
-                </li>
-              </ol>
-            </nav>
+           <Breadcrumbs />
             {/*------ BREADCRUMBS ENDS ------*/}
 
             {/*------ ADDRESS STARTS ------*/}
