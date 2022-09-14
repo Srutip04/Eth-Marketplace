@@ -8,13 +8,15 @@ import { EthRates, Walletbar } from "@components/web3";
 
 export default function Home() {
   return (
-    <BaseLayout>
+    <>
       <Hero />
       <Breadcrumbs />
       <Walletbar />
       <EthRates />
       <OrderCard />
       <CourseList />
-    </BaseLayout>
+    </>
   );
 }
+
+Home.Layout = BaseLayout;
