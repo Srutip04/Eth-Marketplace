@@ -1,5 +1,4 @@
-import Head from 'next/head'
-import Image from 'next/image'
+
 import {  Hero } from "@components/ui/common";
 import { CourseList } from "@components/ui/course";
 import { BaseLayout } from "@components/ui/layout";
