@@ -6,11 +6,16 @@ module.exports = {
   ],
   theme: {
     extend: {
-      opacity: ["disabled"],
-      cursor: ["disabled"],
       maxWidth: {
         "8xl": "1920px",
       },
+    },
+  },
+  variants: {
+    
+    extend: {
+      opacity: ["disabled"],
+      cursor: ["disabled"],
     },
   },
   plugins: [],
