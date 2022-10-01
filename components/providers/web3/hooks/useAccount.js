@@ -2,19 +2,19 @@ import { useEffect, useState } from "react";
 import useSWR from "swr";
 
 const adminAddresses = {
-  "0xa075585816515fa3c6145fdd41bb53b18628df720548c9dd22709df630cacdc6": true,
+  "0xfd454ee145f4f8e5046fed7f3c75f48d87c327a3b065b897e5dd877621544036": true,
 };
 
 export const handler = (web3, provider) => () => {
-  
 
-  const { data,mutate, ...rest } = useSWR(() => {
-      web3 ? "web3/accounts" : null,
-      async () => {
-        const accounts = await web3.eth.getAccounts();
-        return accounts[0];
-      };
-    });
+
+  const { data, mutate, ...rest } = useSWR(
+    () => (web3 ? "web3/accounts" : null),
+    async () => {
+      const accounts = await web3.eth.getAccounts();
+      return accounts[0];
+    }
+  );
 
   useEffect(() => {
     provider &&
@@ -23,7 +23,8 @@ export const handler = (web3, provider) => () => {
 
   return {
     account: {
-      isAdmin: (data && adminAddresses[web3.utils.keccak256(data)]) ?? false,
+      data,
+      isAdmin: (data && adminAddresses[data]) ?? false,
       mutate,
       ...rest,
     },

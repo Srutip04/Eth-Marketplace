@@ -8,7 +8,7 @@ import { useRouter } from "next/router";
 export default function Navbar() {
    const { connect, isLoading, isWeb3Loaded } = useWeb3();
    const { account } = useAccount();
-   const { pathname } = useRouter();
+    const { pathname } = useRouter();
 
 
   return (
