@@ -2,9 +2,7 @@ export default function WalletBar({address,network}) {
   return (
     <section className="text-white bg-indigo-600">
       <div className="p-8">
-        <h1 className="text-2xl">
-          Hello, {address}
-        </h1>
+        <h1 className="text-2xl">Hello, {address}</h1>
         <h2 className="subtitle mb-5 text-xl">
           I hope you are having a great day!
         </h2>
@@ -20,10 +18,21 @@ export default function WalletBar({address,network}) {
             </div>
           </div>
           <div>
-            <div>
-              <span>Currently on </span>
-              <strong className="text-2xl">{network}</strong>
-            </div>
+            {!network.isSupported && (
+              <div className="bg-red-400 p-4 rounded-lg">
+                <div>Connected to wrong network</div>
+                <div>
+                  Connect to: {` `}
+                  <strong className="text-2xl">{network.target}</strong>
+                </div>
+              </div>
+            )}
+            {network.data && (
+              <div>
+                <span>Currently on </span>
+                <strong className="text-2xl">{network.data}</strong>
+              </div>
+            )}
           </div>
         </div>
       </div>
