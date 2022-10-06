@@ -15,8 +15,16 @@ export default function Marketplace({ courses }) {
       <div className="py-4">
         <WalletBar address={account.data} network={network.data} />
       </div>
-      <CourseList courses={courses}>
-        {(course) => <CourseCard key={course.id} course={course} />}
+     <CourseList
+        courses={courses}
+     
+      >
+      {course =>
+        <CourseCard
+          key={course.id}
+          course={course}
+        />
+      }
       </CourseList>
     </>
   );
