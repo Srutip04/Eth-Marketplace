@@ -22,9 +22,10 @@ export const handler = (web3, provider) => () => {
   );
 
   useEffect(() => {
-    provider.on("chainChanged", (chainId) => {
-      mutate(NETWORKS[parseInt(chainId, 16)]);
-    });
+   provider &&
+   provider.on("chainChanged", (chainId) => {
+     mutate(NETWORKS[parseInt(chainId, 16)]);
+   });
   }, [web3]);
 
   return {
